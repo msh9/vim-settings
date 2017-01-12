@@ -1,3 +1,6 @@
+" This settings file relies on some pathogen installed plugins and Vim version
+" > 7.4
+"
 " Features {{{1
 "
 " These options and commands enable some very useful features in Vim, that
@@ -170,3 +173,21 @@ set writebackup
 "------------------------------------------------------------
 " Mouse support
 set mouse=a
+
+"------------------------------------------------------------
+" Omnicomplete settings
+autocmd CompleteDone * pclose
+
+
+"------------------------------------------------------------
+" Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_python_exec = 'python3'
